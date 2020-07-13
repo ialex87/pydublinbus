@@ -1,17 +1,15 @@
-PyDublinBus
-========================================
+# PyDublinBus
 
 Python Interface for the Dublin Bus RTPI API.
 
+## Example usage
 
-Example basic usage
--------------------
 #### Time table:
+
 ```
 >>> from pydublinbus import DublinBusRTPI
 >>> mybus=DublinBusRTPI(stopid='312')
->>> from pprint import pprint
->>> pprint(mybus.bus_timetable())
+>>> mybus.bus_timetable()
 [{'due_in': '6', 'route': '26'},
  {'due_in': '8', 'route': '25B'},
  {'due_in': '15', 'route': '67'},
@@ -26,7 +24,20 @@ Example basic usage
  {'due_in': '46', 'route': '25A'}]
 ```
 
+#### Time table filtered by route
+
+```
+>>> from pydublinbus import DublinBusRTPI
+>>> mybus=DublinBusRTPI(stopid='312', route='25A')
+>>> from pprint import pprint
+>>> mybus.bus_timetable()
+[{'due_in': '20', 'route': '25A'},
+ {'due_in': '43', 'route': '25A'}]
+
+```
+
 #### Raw json data:
+
 ```
 >>> from pydublinbus import DublinBusRTPI
 >>> mybus=DublinBusRTPI(stopid='312')
