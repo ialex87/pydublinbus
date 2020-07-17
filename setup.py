@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="pydublinbus",
-    version="0.0.3b",
+    version="0.0.3",
     description="Python library to get the real-time transport information (RTPI) for Dublin Bus",
     long_description=long_description,
     long_description_content_type="text/markdown",
